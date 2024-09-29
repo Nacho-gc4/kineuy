@@ -4,8 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Massage Gift Certificate | Your Brand</title>
+    <title>KineUY</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Domaine+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+    <!-- Slick Carousel JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 </head>
 
 <body>
@@ -19,16 +30,15 @@
                         </a>
                     </div>
                     <div class="brand-text">
-                        <span>Masajes y Rehabilitación</span>
+                        <span>Cuestión de movimiento</span>
                     </div>
                 </div>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Beneficios</a></li>
-                        <li><a href="#">Sobre nosotros</a></li>
-                        <li><a href="#">Comentarios</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#convenios">Convenios</a></li>
+                        <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+                        <li><a href="#nuestros-centros">Nuestros centros</a></li>
                     </ul>
                 </nav>
             </div>
@@ -38,14 +48,15 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Bienvenidos a KineUY</h1>
-                <p>En KineUY nos especializamos en brindar servicios de masajes terapéuticos y relajantes, adaptados a
-                    las necesidades de cada cliente. Nuestro equipo de profesionales está comprometido con su bienestar
+                <h1>Bienvenidos a Kine</h1>
+                <p>En Kine nos especializamos en brindar servicios de masajes terapéuticos y relajantes, y ejercicios de
+                    postura, flexibilidad y rehabilitación, según las necesidades de cada paciente. Nuestro equipo de
+                    profesionales está comprometido con su bienestar
                     y se dedica a ofrecer una experiencia única de cuidado y relajación.</p>
             </div>
         </section>
 
-        <section class="gift-options">
+        <section id="servicios" class="gift-options">
             <h2>Servicios que ofrecemos</h2>
             <div class="gift-text">
                 <p>Puedes optar por masajes relajantes y descontracturantes, ejercicios para mejorar la flexibilidad y
@@ -53,23 +64,24 @@
                 </p>
             </div>
             <div class="gift-cards">
+
                 <div class="gift-card">
-                    <img src="images/icon.png" Single Massage">
-                    <div class="card-content">
-                        <h3>Gimnasia Postural y Stretching</h3>
-                        <p>Ejercicios posturales y estiramientos guiados, ayudan a mejorar la flexibilidad, la postura y
-                            reducir tensiones musculares.</p>
-                    </div>
-                </div>
-                <div class="gift-card">
-                    <img src="images/icon-couplesMassage.png" alt="Couples Massage">
+                    <img src="images/masajes.jpg" alt="Couples Massage">
                     <div class="card-content">
                         <h3>Masajes Terapéuticos</h3>
                         <p>Masajes orientados a aliviar el estrés, reducir contracturas y mejorar la circulación.</p>
                     </div>
                 </div>
                 <div class="gift-card">
-                    <img src="images/icon-dollarAmount.png" alt="Massage Membership">
+                    <img src="images/gimnasia.jpg" Single Massage">
+                    <div class="card-content">
+                        <h3>Gimnasia Postural y flexibilidad</h3>
+                        <p>Ejercicios posturales y estiramientos guiados, ayudan a mejorar la flexibilidad, la postura y
+                            reducir tensiones musculares.</p>
+                    </div>
+                </div>
+                <div class="gift-card">
+                    <img src="images/rehab.jpg" alt="Massage Membership">
                     <div class="card-content">
                         <h3>Kinesiología</h3>
                         <p>Tratamiento personalizado para diversas patologías musculoesqueléticas, buscando restaurar la
@@ -79,8 +91,14 @@
             </div>
         </section>
 
-        <section class="testimonials">
+        <section class="testimonials" style="position: relative;">
             <div class="testimonial-content">
+                <div class="testimonial-video">
+                    <video controls>
+                        <source src="images/gimnasia_video2.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
                 <div class="testimonial-text">
                     <h2 class="testimonial-title">"Tomarse un tiempo para relajarse y renovarse es esencial para vivir
                         bien"</h2>
@@ -97,10 +115,10 @@
         </section>
 
 
-        <section class="benefits">
-            <h2>Beneficios</h2>
+        <section id="convenios" class="benefits">
+            <h2>Convenios</h2>
             <div class="gift-text">
-                <p>En KineUY intentamos que todos puedan cuidar y gozar de su salud, por eso ofrecemos estos beneficios
+                <p>En Kine intentamos que todos puedan cuidar y gozar de su salud, por eso ofrecemos estos beneficios
                 </p>
             </div>
             <div class="benefit-cards">
@@ -110,13 +128,13 @@
                 </div>
                 <div class="benefit-card">
                     <img src="images/ajupe.png" Single Massage">
-                    <p>Beneficio para jubilados y pensionistas.</p>
+                    <p>Convenio con Ajupe para jubilados y pensionistas.</p>
                 </div>
             </div>
         </section>
 
 
-        <section class="corporate-gifts">
+        <section id="sobre-nosotros" class="corporate-gifts">
             <div class="corporate-gifts-container">
                 <div class="corporate-gifts-image"></div>
                 <div class="corporate-gifts-content">
@@ -126,7 +144,7 @@
                             patologías específicas. Mi misión es mejorar tu calidad de vida a través de un enfoque
                             integral que combina la rehabilitación, el movimiento y el bienestar.</p>
                         <a href="#" class="corporate-gifts-link">
-                            Contáctanos para ser parte de KineUY
+                            Contáctanos para ser parte de Kine
                             <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M14.6187184,5.83128157 L20.6187184,11.8312816 C20.9604272,12.1729903 20.9604272,12.7270097 20.6187184,13.0687184 L14.6187184,19.0687184 C14.2770097,19.4104272 13.7229903,19.4104272 13.3812816,19.0687184 C13.0395728,18.7270097 13.0395728,18.1729903 13.3812816,17.8312816 L17.838,13.374 L4,13.375 C3.51675084,13.375 3.125,12.9832492 3.125,12.5 C3.125,12.0167508 3.51675084,11.625 4,11.625 L17.936,11.624 L13.3812816,7.06871843 C13.0395728,6.72700968 13.0395728,6.17299032 13.3812816,5.83128157 C13.7229903,5.48957281 14.2770097,5.48957281 14.6187184,5.83128157 Z"
@@ -138,17 +156,57 @@
             </div>
         </section>
 
+        <section id="nuestros-centros" class="gallery">
+            <h2>Nuestros centros</h2>
+            <div class="gallery-carousel">
+                <div class="carousel-item"><img src="images/image2.jpg" alt="Image 2"></div>
+                <div class="carousel-item"><img src="images/cama1.jpg" alt="Image 2"></div>
+                <div class="carousel-item"><img src="images/cama2.jpg" alt="Image 2"></div>
+                <div class="carousel-item"><img src="images/image1.jpg" alt="Image 1"></div>
+                <div class="carousel-item"><img src="images/centro1.jpg" alt="Image 2"></div>
+                <div class="carousel-item">
+                    <video controls>
+                        <source src="images/video_ejemplo.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video controls>
+                        <source src="images/ejemplo2.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video controls>
+                        <source src="images/ejemplo3.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video controls>
+                        <source src="images/ejemplo4.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video controls>
+                        <source src="images/ejemplo5.mp4" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+            </div>
+        </section>
 
     </main>
 
-    <footer class="site-footer">
+    <footer id="ubicacion"class="site-footer">
         <div class="footer-container">
             <div class="footer-locations">
-                <h3>Locales</h3>
+                <h3>Centros</h3>
                 <ul>
-                    <li>Local 1: Calle 123, Pocitos</li>
-                    <li>Local 2: Avenida 456, Ciudad Vieja</li>
-                    <li>Local 3: Plaza 789, La Paz Canelones</li>
+                    <li>Ciudad Vieja: Calle Sarandí 554</li>
+                    <li>La Paz, Canelones: Calle Emilio Andreoib 265</li>
+                    <li>Pocitos: Calle Rivera 3037</li>
                 </ul>
             </div>
             <div class="footer-social">
@@ -178,12 +236,81 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 KineUY. Todos los derechos reservados.</p>
-        </div>
+        <!--div class="footer-bottom">
+            <p>&copy; 2024 Kine. Todos los derechos reservados.</p>
+        </div-->
     </footer>
 
+    <div class="whatsapp-container">
+        <div class="whatsapp-label">Reserva por whatsapp</div>
+        <a href="https://wa.me/091266087?text=Hola%20Kine,%20cómo%20están?%20Quisiera%20reservar%20una%20sesión" class="whatsapp-float" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+        </a>
+    </div>
+
     <script src="scripts.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.gallery-carousel').slick({
+                centerMode: true,
+                centerPadding: '0',
+                slidesToShow: 3,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 1
+                        }
+                    }
+                ],
+                prevArrow: '<button type="button" class="slick-prev">←</button>',
+                nextArrow: '<button type="button" class="slick-next">→</button>'
+            });
+    
+            // Pausa todos los videos cuando se cambia de diapositiva
+            $('.gallery-carousel').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+                var currentSlideElement = $(slick.$slides.get(currentSlide));
+                var video = currentSlideElement.find('video');
+                if (video.length) {
+                    video.get(0).pause();
+                }
+            });
+    
+            // Reproduce el video en la diapositiva central
+            $('.gallery-carousel').on('afterChange', function (event, slick, currentSlide) {
+                var currentSlideElement = $(slick.$slides.get(currentSlide));
+                var video = currentSlideElement.find('video');
+                if (video.length) {
+                    video.get(0).play();
+                }
+            });
+    
+            // Permite hacer clic en las imágenes grises para centrarlas
+            $('.gallery-carousel').on('click', '.slick-slide', function(e) {
+                e.stopPropagation();
+                var index = $(this).data("slick-index");
+                if ($('.gallery-carousel').slick('slickCurrentSlide') !== index) {
+                    $('.gallery-carousel').slick('slickGoTo', index);
+                }
+            });
+        });
+    </script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+    
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
