@@ -1253,6 +1253,7 @@ h6 {
     font-family: 'TestDomaineDisplay', serif;
     font-size: 32px;
     margin-bottom: 20px;
+    font-weight: 400;
 }
 
 .gallery-grid {
@@ -1508,13 +1509,14 @@ section[id] {
 }
 
 .testimonials {
-    background-color: #f9f9f9;
     padding: 60px 20px;
     text-align: center;
+    background-image: url(images/quote-banner-mobile.jpg);
 }
 
 .testimonials h2 {
     font-family: 'TestDomaineDisplay', serif;
+    font-weight: 400;
     font-size: 32px;
     margin-bottom: 40px;
 }
