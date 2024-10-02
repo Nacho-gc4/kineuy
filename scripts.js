@@ -124,4 +124,58 @@ document.addEventListener('DOMContentLoaded', function () {
             lightboxImg.style.display = 'none';
         }
     }
+
+    const testimonialData = [
+        {
+            author: "Milagros F.",
+            content: "Excelente profesional, usó buenas técnicas para aliviarme el dolor del gemelo derecho. En cuanto al consultorio es precioso, lindo ambiente y agradable. Lo recomiendo.",
+            rating: 5,
+            date: "2024-08-18",
+        },
+        {
+            author: "Martina N.",
+            content: "Buen profesional Brian, muy buenas sus explicaciones y abordaje, me ayudo a calmar mi dolor.",
+            rating: 5,
+            date: "2024-07-29",
+        },
+        {
+            author: "Sofia B.",
+            content: "Muy profesional, excelente atención. Muy buenos los masajes, alivió mucho el dolor en los hombros y cuello, recomendado.",
+            rating: 5,
+            date: "2024-05-21",
+        },
+        
+    ];
+
+    // Función para generar estrellas HTML
+    function generateStars(rating) {
+        return Array(5).fill().map((_, i) => `
+            <span class="star ${i < rating ? 'filled' : ''}">★</span>
+        `).join('');
+    }
+
+    // Función para formatear la fecha
+    function formatDate(dateString) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(dateString).toLocaleDateString('es-ES', options);
+    }
+
+    // Generar HTML para los testimonios
+    const testimonialHTML = testimonialData.map(testimonial => `
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <div class="star-rating">${generateStars(testimonial.rating)}</div>
+                <p>"${testimonial.content}"</p>
+            </div>
+            <div class="testimonial-author">
+                <div>
+                    <p class="author-name">${testimonial.author}</p>
+                    <p class="testimonial-date">${formatDate(testimonial.date)}</p>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    // Insertar los testimonios en el DOM
+    document.querySelector('.testimonial-grid').innerHTML = testimonialHTML
 });

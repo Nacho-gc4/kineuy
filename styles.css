@@ -145,7 +145,8 @@ html, body {
 
 .benefit-card img {
     width: 140px;
-    height: 80px;
+    height: 110px;
+    margin-bottom: 10px;
     object-fit: contain;
 }
 
@@ -196,7 +197,7 @@ html, body {
 }
 
 /* Testimonials section */
-.testimonials {
+.testimonials2 {
     background-image: url('images/quote-banner.jpg');
     background-position: 50%;
     background-size: cover;
@@ -206,7 +207,7 @@ html, body {
     width: 100%;
 }
 
-.testimonial-content {
+.testimonial-content2 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -216,7 +217,7 @@ html, body {
     padding: 0 20px;
 }
 
-.testimonial-text {
+.testimonial-text2 {
     flex: 0 0 50%;
     display: flex;
     flex-direction: column;
@@ -265,17 +266,17 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    .testimonials {
+    .testimonials2 {
         background-image: url('images/quote-banner-mobile.jpg');
         height: auto;
     }
 
-    .testimonial-content {
+    .testimonial-content2 {
         justify-content: center;
         padding: 0;
     }
 
-    .testimonial-text {
+    .testimonial-text2 {
         flex: 0 0 100%;
         align-items: center;
         text-align: center;
@@ -356,7 +357,7 @@ footer {
         max-width: 300px;
     }
 
-    .testimonial-content {
+    .testimonial-content2 {
         flex-direction: column;
         height: auto;
     }
@@ -365,7 +366,7 @@ footer {
         height: 300px;
     }
 
-    .testimonial-text {
+    .testimonial-text2 {
         max-width: 100%;
         padding: 20px 0 0 0;
         margin-bottom: -25px;
@@ -736,7 +737,8 @@ body {
 
 .benefit-card img {
     width: 140px;
-    height: 80px;
+    height: 110px;
+    margin-bottom: 10px;
     object-fit: contain;
 }
 
@@ -785,17 +787,16 @@ body {
 }
 
 /* Testimonials section */
-.testimonials {
+.testimonials2 {
     background-image: url('images/quote-banner.jpg');
     background-position: 50%;
     background-size: cover;
-    height: 480px;
     overflow: hidden;
     padding: 0;
     width: 100%;
 }
 
-.testimonial-content {
+.testimonial-content2 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -805,7 +806,7 @@ body {
     padding: 0 20px;
 }
 
-.testimonial-text {
+.testimonial-text2 {
     flex: 0 0 50%;
     display: flex;
     flex-direction: column;
@@ -852,17 +853,17 @@ body {
 }
 
 @media (max-width: 768px) {
-    .testimonials {
+    .testimonials2 {
         background-image: url('images/quote-banner-mobile.jpg');
         height: auto;
     }
 
-    .testimonial-content {
+    .testimonial-content2 {
         justify-content: center;
         padding: 40px 20px;
     }
 
-    .testimonial-text {
+    .testimonial-text2 {
         flex: 0 0 100%;
         align-items: center;
         text-align: center;
@@ -1179,7 +1180,6 @@ h6 {
 
 .footer-container {
     line-height: 1.2;
-    height: 113px;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -1475,12 +1475,17 @@ section[id] {
     .footer-container {
         flex-direction: column;
         align-items: center;
+        height: auto;  /* Elimina la altura fija */
     }
 
     .footer-locations, .footer-social {
         width: 100%;
         text-align: center;
         margin-bottom: 20px;
+    }
+
+    .footer-social {
+        order: 2;  /* Mueve las redes sociales al final */
     }
 
     .social-icons {
@@ -1500,4 +1505,150 @@ section[id] {
         height: auto;
     }
 
+}
+
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-family: 'TestDomaineDisplay', serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.author-name {
+    font-weight: bold;
+}
+
+.testimonial-date {
+    font-size: 0.8em;
+    color: #666;
+}
+.star-rating {
+    margin-bottom: 10px;
+    display: flex;  /* Añade esta línea */
+    justify-content: center;  /* Añade esta línea */
+}
+
+.star {
+    color: #e4e5e9;
+    font-size: 20px;
+    display: inline-block;  /* Añade esta línea */
+    margin: 0 2px;  /* Añade esta línea para dar un poco de espacio entre las estrellas */
+}
+
+.star.filled {
+    color: #ffc107;
+}
+
+.testimonial-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Añade esta línea */
+}
+
+.testimonial-content p {
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;  /* Añade esta línea si quieres que el texto esté centrado */
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;  /* Asegura que todas las tarjetas tengan la misma altura */
+}
+
+.testimonial-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centra verticalmente el contenido */
+    align-items: center;
+    flex-grow: 1;  /* Permite que el contenido ocupe todo el espacio disponible */
+}
+
+.star-rating {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 0;  /* Elimina el margen inferior */
+    text-align: center;
+}
+
+.testimonial-author {
+    margin-top: 20px;  /* Añade espacio entre el contenido y el autor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.author-name {
+    font-weight: bold;
+    margin-bottom: 5px;  /* Añade un pequeño espacio entre el nombre y la fecha */
+}
+
+.testimonial-date {
+    font-size: 0.8em;
+    color: #666;
+}
+
+@media (max-width: 1016px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials {
+        height: auto;
+    }
 }
