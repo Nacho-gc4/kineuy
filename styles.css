@@ -1517,6 +1517,7 @@ section[id="testimonios"] {
     text-align: center;
     background-image: url(images/quote-banner-mobile.jpg);
     padding-bottom: 90px;
+    margin-bottom: -70px;
 }
 
 .testimonials h2 {
