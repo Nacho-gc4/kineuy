@@ -1472,6 +1472,10 @@ section[id] {
     scroll-margin-top: 30px; /* Ajusta este valor según la altura de tu menú de navegación */
 }
 
+section[id="testimonios"] {
+    scroll-margin-top: -5px; /* Ajusta este valor según la altura de tu menú de navegación */
+}
+
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
