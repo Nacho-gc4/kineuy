@@ -79,4 +79,49 @@ document.addEventListener('DOMContentLoaded', function () {
             setInterval(showNextComment, 5000); // Change comment every 5 seconds
         }, 5000); // Wait 5 seconds before starting the rotation
     }
+
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideo = document.getElementById('lightbox-video');
+    const close = document.querySelector('.close');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let currentIndex = 0;
+
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentIndex = index;
+            updateLightbox();
+            lightbox.style.display = 'block';
+        });
+    });
+
+    close.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        lightboxVideo.pause();
+    });
+
+    prev.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+        updateLightbox();
+    });
+
+    next.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+        updateLightbox();
+    });
+
+    function updateLightbox() {
+        const item = galleryItems[currentIndex].firstElementChild;
+        if (item.tagName === 'IMG') {
+            lightboxImg.src = item.src;
+            lightboxImg.style.display = 'block';
+            lightboxVideo.style.display = 'none';
+        } else if (item.tagName === 'VIDEO') {
+            lightboxVideo.src = item.querySelector('source').src;
+            lightboxVideo.style.display = 'block';
+            lightboxImg.style.display = 'none';
+        }
+    }
 });

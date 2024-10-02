@@ -22,6 +22,12 @@ body {
     background-color: #f6f6f4;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
 /* Hero section */
 .hero {
     background-image: url('images/masajes7.png');
@@ -67,7 +73,22 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+.testimonial-video {
+    position: relative;
+    width: 100%;
+    padding-top: 177.78%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+}
 
+.testimonial-video video {
+    position: absolute;
+    top: 47.6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
 /* Gift options section */
 .gift-options,
 .benefits {
@@ -179,7 +200,7 @@ body {
     background-image: url('images/quote-banner.jpg');
     background-position: 50%;
     background-size: cover;
-    height: 315px;
+    height: 515px;
     overflow: hidden;
     padding: 0;
     width: 100%;
@@ -232,17 +253,10 @@ body {
     align-items: center;
 }
 
-.testimonial-video {
-    left: 0;
-    /* Alinea el video a la izquierda */
-    z-index: 1;
-    /* Asegura que el video esté por encima de otros elementos */
-}
 
 .testimonial-video video {
-    height: 320px;
+    height: 600px;
     /* Ajusta la altura según sea necesario */
-    object-fit: cover;
     /* Mantiene la proporción y cubre el área del contenedor */
 }
 
@@ -258,13 +272,17 @@ body {
 
     .testimonial-content {
         justify-content: center;
-        padding: 40px 20px;
+        padding: 0;
     }
 
     .testimonial-text {
         flex: 0 0 100%;
         align-items: center;
         text-align: center;
+    }
+
+    .testimonial-video {
+        padding-top: 120%;
     }
 }
 
@@ -349,7 +367,8 @@ footer {
 
     .testimonial-text {
         max-width: 100%;
-        padding: 40px 20px;
+        padding: 20px 0 0 0;
+        margin-bottom: -25px;
     }
 }
 
@@ -530,10 +549,14 @@ h6 {
     .corporate-gifts-container {
         flex-direction: column;
         height: auto;
+        text-align: center;
+        align-items: center;
     }
 
     .corporate-gifts-image {
         height: 200px;
+        margin-top: 30px;
+        margin-bottom: -10px;
     }
 
     .corporate-gifts-content {
@@ -766,7 +789,7 @@ body {
     background-image: url('images/quote-banner.jpg');
     background-position: 50%;
     background-size: cover;
-    height: 315px;
+    height: 480px;
     overflow: hidden;
     padding: 0;
     width: 100%;
@@ -822,6 +845,12 @@ body {
     margin-left: 8px;
 }
 
+@media (max-width: 430px) {
+    .benefit-card img{
+        width: 90%!important;
+    }
+}
+
 @media (max-width: 768px) {
     .testimonials {
         background-image: url('images/quote-banner-mobile.jpg');
@@ -838,6 +867,7 @@ body {
         align-items: center;
         text-align: center;
     }
+
 }
 
 /* Footer styles */
@@ -919,10 +949,6 @@ footer {
         height: 300px;
     }
 
-    .testimonial-text {
-        max-width: 100%;
-        padding: 40px 20px;
-    }
 }
 
 /* Update heading styles */
@@ -1217,7 +1243,6 @@ h6 {
         flex-direction: column;
     }
 }
-
 .gallery {
     max-width: 1400px;
     margin: 60px auto;
@@ -1230,10 +1255,96 @@ h6 {
     margin-bottom: 20px;
 }
 
-.gallery-carousel {
-    position: relative;
-    max-width: 100%;
-    margin: 0 auto;
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+    transform: scale(1.1);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    align-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+        height: 150px;
+    }
 }
 
 .carousel-item {
@@ -1300,12 +1411,12 @@ h6 {
 }
 .whatsapp-container {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: 20px;
+    right: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    z-index: 100;
+    z-index: 9999;
 }
 
 .whatsapp-label {
@@ -1318,7 +1429,6 @@ h6 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     opacity: 1;
 }
-
 
 .whatsapp-float {
     width: 60px;
@@ -1338,14 +1448,56 @@ h6 {
 
 .whatsapp-float:hover {
     background-color: #128C7E;
-    transform: scale(1.1);
 }
 
-.whatsapp-float svg {
-    width: 36px;
-    height: 36px;
+@media (max-width: 768px) {
+    .whatsapp-container {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .whatsapp-label {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 section[id] {
     scroll-margin-top: 30px; /* Ajusta este valor según la altura de tu menú de navegación */
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-locations, .footer-social {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item img,
+    .carousel-item video {
+        max-height: 300px;
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .slick-slide {
+        height: auto;
+    }
+
 }
