@@ -32,9 +32,8 @@ html, body {
 .hero {
     background-image: url('images/masajes7.png');
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
-    height: 600px;
+    height: 700px;
     position: relative;
 }
 
@@ -635,15 +634,6 @@ body {
     background-color: #f6f6f4;
 }
 
-/* Hero section */
-.hero {
-    background-image: url('images/masajes7.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 600px;
-    position: relative;
-}
 
 .hero-content {
     position: absolute;
