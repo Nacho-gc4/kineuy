@@ -575,7 +575,7 @@ h6 {
 
 .footer-container {
     line-height: 1.2;
-    height: 113px;
+    height: 143px;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -1649,4 +1649,37 @@ section[id="testimonios"] {
     .testimonials {
         height: auto;
     }
+}
+
+.footer-payments {
+    color: white;
+    margin: 0 2rem;
+    text-align: center;
+    margin-bottom: 2rem; /* Agregado margen inferior */
+}
+
+.footer-payments h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-payments p {
+    display: flex;
+    align-items: center; /* Asegura alineación vertical */
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    line-height: 1; /* Ayuda a alinear mejor el texto con el ícono */
+}
+
+.footer-payments svg {
+    fill: currentColor;
+    display: block; /* Mejora la alineación */
+}
+
+/* Ajuste para la distribución en el footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 2rem; /* Espacio adicional al final */
 }
